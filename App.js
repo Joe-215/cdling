@@ -24,17 +24,21 @@ class App extends React.Component {
         title: "third",
         description: "third image",
       },
+      {
+        source: require("./avatar4.jpg"),
+        title: "fourth",
+        description: "fourth image",
+      },
+      {
+        source: require("./avatar5.jpeg"),
+        title: "fifth",
+        description: "fifth image",
+      },
     ],
     currentScene: 0,
   };
 
-  // handleChangeScene = (scene) => this.setState({ currentScene: scene });
-  // handleChangeScene = function (scene) {
-  //   this.setState({ currentScene: scene });
-  // };
-
   render() {
-    // const { currentScene } = this.state;
     const handleChangeScene = (scene) => this.setState({ currentScene: scene });
 
     return (
@@ -65,14 +69,14 @@ export default App;
 /* TODO
 
 1. Head
+- exclamation mark
 
 2. UserINfo
-- Top Navigation
+
 - UserData with Linkedin Badge
 - User Content
 
 3. Carousel
-- Carousel Implementation
-- Stuck AI Picture
+- title bar border radius
 
 */

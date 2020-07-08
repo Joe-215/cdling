@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-export default UserPhoto = () => {
+export default MyPortfolio = () => {
   return (
     <View style={styles.container}>
-      <Text>I am a UserPhoto</Text>
+      <Text>I am a MyPortfolio</Text>
     </View>
   );
 };

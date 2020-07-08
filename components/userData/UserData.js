@@ -5,7 +5,7 @@ import { NavigationContainer, TabActions } from "@react-navigation/native";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
 import NewsFeed from "./NewsFeed";
-import UserPhoto from "./UserPhoto";
+import MyPortfolio from "./MyPortfolio";
 import MyStats from "./MyStats";
 
 const Tab = createMaterialTopTabNavigator();
@@ -16,7 +16,7 @@ export default UserData = () => {
       <View style={styles.container}>
         <Tab.Navigator>
           <Tab.Screen name="NEWS FEED" component={NewsFeed} />
-          <Tab.Screen name="MY PORTFOLIO" component={UserPhoto} />
+          <Tab.Screen name="MY PORTFOLIO" component={MyPortfolio} />
           <Tab.Screen name="MY STATS" component={MyStats} />
         </Tab.Navigator>
       </View>
