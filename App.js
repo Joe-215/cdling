@@ -1,19 +1,21 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 import Head from "./components/Head";
 import UserData from "./components/userData/UserData";
-import Carousel from "./components/Carousel";
+import MyCarousel from "./components/myCarousel/MyCarousel";
+import { registerRootComponent } from "expo";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Head />
-      <UserData />
-      <Carousel />
-    </View>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Head />
+        <UserData />
+        <MyCarousel />
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -25,12 +27,11 @@ const styles = StyleSheet.create({
   },
 });
 
+registerRootComponent(App);
+
 /* TODO
 
 1. Head
-- User Icon //
-- Leaf Icon //
-- Exclamation Mark //
 
 2. UserINfo
 - Top Navigation
