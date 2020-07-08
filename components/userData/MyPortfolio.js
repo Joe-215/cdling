@@ -1,10 +1,10 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Dimensions } from "react-native";
 
-export default MyPortfolio = () => {
+export default NewsFeed = () => {
   return (
     <View style={styles.container}>
-      <Text>I am a MyPortfolio</Text>
+      <Text>This is my Portfolio</Text>
     </View>
   );
 };
@@ -12,7 +12,8 @@ export default MyPortfolio = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row",
-    backgroundColor: "green",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "red",
   },
 });

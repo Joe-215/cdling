@@ -16,23 +16,23 @@ class App extends React.Component {
       },
       {
         source: require("./avatar2.png"),
-        title: "second",
-        description: "second image",
+        title: "Second",
+        description: "This is the second coffee party",
       },
       {
         source: require("./avatar3.jpg"),
-        title: "third",
-        description: "third image",
+        title: "Third",
+        description: "This is the third coffee party",
       },
       {
         source: require("./avatar4.jpg"),
-        title: "fourth",
-        description: "fourth image",
+        title: "Fourth",
+        description: "This is the fourth coffee party",
       },
       {
         source: require("./avatar5.jpeg"),
-        title: "fifth",
-        description: "fifth image",
+        title: "Fifth",
+        description: "This is the fifth coffee party",
       },
     ],
     currentScene: 0,
@@ -70,11 +70,12 @@ export default App;
 
 1. Head
 - exclamation mark
+- cross mark
 
 2. UserINfo
 
-- UserData with Linkedin Badge
-- User Content
+- Linkedin Badge
+- Font
 
 3. Carousel
 - title bar border radius

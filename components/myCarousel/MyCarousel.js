@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Dimensions, Image } from "react-native";
 import Carousel, { Pagination } from "react-native-snap-carousel";
-import { useLinkProps } from "@react-navigation/native";
-// import { render } from "react-dom";
-// import { First } from "./First";
-// import { Second } from "./Second";
-// import { Third } from "./Third";
+import { withTheme } from "react-native-elements";
 
 export default MyCarousel = (props) => {
   const [sliderWidth, setSliderWidth] = useState(414);
@@ -75,13 +71,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     color: "black",
     textAlign: "center",
-    fontSize: 28,
+    fontSize: 24,
   },
   carouselDescription: {
     flex: 2,
     marginTop: 0,
     paddingHorizontal: 0,
-    fontSize: 20,
+    fontSize: 16,
     lineHeight: 28,
     color: "black",
     textAlign: "center",
@@ -109,17 +105,12 @@ const styles = StyleSheet.create({
     borderColor: "grey",
   },
   titleText: {
-    fontSize: 20,
-    backgroundColor: "rgb(198, 212, 169)",
+    fontSize: 18,
     padding: 10,
-    paddingLeft: 20,
+    paddingLeft: 10,
   },
   titleContainer: {
-    borderRadius: 10,
-    // borderBottomRightRadius: 15,
+    backgroundColor: "rgb(198, 212, 169)",
+    borderBottomRightRadius: 20,
   },
-  // dots: {
-  //   flex: 1,
-  //   flexDirection: "column",
-  // },
 });
