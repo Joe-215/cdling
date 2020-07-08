@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, Dimensions } from "react-native";
+import { View, Text, StyleSheet, Dimensions, Image } from "react-native";
 import Carousel, { Pagination } from "react-native-snap-carousel";
+import { useLinkProps } from "@react-navigation/native";
 // import { render } from "react-dom";
 // import { First } from "./First";
 // import { Second } from "./Second";
 // import { Third } from "./Third";
 
 export default MyCarousel = (props) => {
+  const [sliderWidth, setSliderWidth] = useState(414);
+  const [itemWidth, setItemWidth] = useState(414);
+  const images = props.items;
+
   const _renderItem = ({ item }) => {
     return (
       <View style={styles.slide}>
@@ -18,62 +23,81 @@ export default MyCarousel = (props) => {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
+      <View style={styles.titleContainer}>
+        <Text style={styles.titleText}>OPEN COFFEE PARTIES</Text>
+      </View>
       <Carousel
-        data={props.images}
+        style={styles.carouselContainer}
+        data={images}
         renderItem={_renderItem}
+        currentScene={props.currentScene}
         sliderWidth={sliderWidth}
         itemWidth={itemWidth}
-        onSnapToItem={handleChangeScene}
+        onSnapToItem={props.onChangeScene}
       />
       <Pagination
+        style={styles.dots}
         dotsLength={images.length}
-        activeDotIndex={currentScene}
+        activeDotIndex={props.currentScene}
         containerStyle={styles.paginationContainer}
         dotStyle={styles.activeDot}
         inactiveDotStyle={styles.inactiveDot}
         inactiveDotOpacity={0.9}
         inactiveDotScale={1}
+        style={styles.dotContainer}
       />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 7,
+    flexDirection: "column",
+  },
   slide: {
-    flex: 1,
+    flex: 7,
+    flexDirection: "column",
     marginHorizontal: 40,
-    width: Metrics.SCREEN_WIDTH - 80,
+    width: Dimensions.get("window").width - 80,
   },
   carouselImage: {
+    marginTop: 20,
+    flex: 8,
     resizeMode: "contain",
     width: "100%",
   },
   carouselTitle: {
-    marginTop: 50,
+    marginTop: 20,
+    marginBottom: 0,
+    flex: 2,
     paddingHorizontal: 20,
-    color: "white",
+    color: "black",
     textAlign: "center",
     fontSize: 28,
   },
   carouselDescription: {
-    marginTop: 20,
-    paddingHorizontal: 20,
+    flex: 2,
+    marginTop: 0,
+    paddingHorizontal: 0,
     fontSize: 20,
     lineHeight: 28,
-    color: "white",
+    color: "black",
     textAlign: "center",
   },
   paginationContainer: {
     position: "relative",
     paddingVertical: 2,
+    flex: 0.2,
+    flexDirection: "row",
   },
   activeDot: {
     width: 16,
     height: 16,
     borderRadius: 8,
     marginHorizontal: 3,
-    backgroundColor: Colors.yellow,
+    backgroundColor: "grey",
   },
   inactiveDot: {
     width: 16,
@@ -81,62 +105,21 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginHorizontal: 3,
     borderWidth: 2,
-    backgroundColor: Colors.transparent(0.1),
-    borderColor: Colors.white,
+    backgroundColor: "white",
+    borderColor: "grey",
   },
+  titleText: {
+    fontSize: 20,
+    backgroundColor: "rgb(198, 212, 169)",
+    padding: 10,
+    paddingLeft: 20,
+  },
+  titleContainer: {
+    borderRadius: 10,
+    // borderBottomRightRadius: 15,
+  },
+  // dots: {
+  //   flex: 1,
+  //   flexDirection: "column",
+  // },
 });
-
-// export class MyCarousel extends Component {}
-//   _renderItem = ({ item, indes }) => {
-//     return (
-//       <View>
-//         <Text>This is render Item</Text>
-//       </View>
-//     );
-//   };
-
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <View style={styles.title}>
-//           <Text style={styles.titleContent}>OPEN COFFEE PARTIES</Text>
-//         </View>
-//         {/* <View>
-//           <Text>I am a Carousel</Text>
-//         </View> */}
-//         <View>
-//           <Carousel
-//             ref={(c) => {
-//               this._carousel = c;
-//             }}
-//             data={this.state.entries}
-//             renderItem={this._renderItem}
-//             sliderWidth={sliderWidth}
-//             itemWidth={itemWidth}
-//           />
-//         </View>
-//       </View>
-//     );
-//   }
-// }
-
-// styles = StyleSheet.create({
-//   container: {
-//     flex: 6,
-//     flexDirection: "column",
-//     alignItems: "center",
-//   },
-//   title: {
-//     height: 40,
-//     backgroundColor: "rgb(198, 212, 169)",
-//     borderBottomRightRadius: 15,
-//     width: Dimensions.get("window").width,
-//   },
-//   titleContent: {
-//     fontSize: 18,
-//     // textAlign: "center",
-//     textAlignVertical: "center",
-//     paddingVertical: 9,
-//     paddingLeft: 20,
-//   },
-// });
