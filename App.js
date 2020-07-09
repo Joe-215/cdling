@@ -9,28 +9,28 @@ class App extends React.Component {
   state = {
     images: [
       {
-        source: require("./stuckAI.png"),
+        source: require("./assets/stuckAI.png"),
         title: "STUCK AI",
         description:
           "Ad platform for digital out-of-home (DOOH)location-based advertising.",
       },
       {
-        source: require("./avatar2.png"),
+        source: require("./assets/avatar2.png"),
         title: "Second",
         description: "This is the second coffee party",
       },
       {
-        source: require("./avatar3.jpg"),
+        source: require("./assets/avatar3.jpg"),
         title: "Third",
         description: "This is the third coffee party",
       },
       {
-        source: require("./avatar4.jpg"),
+        source: require("./assets/avatar4.jpg"),
         title: "Fourth",
         description: "This is the fourth coffee party",
       },
       {
-        source: require("./avatar5.jpeg"),
+        source: require("./assets/avatar5.jpeg"),
         title: "Fifth",
         description: "This is the fifth coffee party",
       },

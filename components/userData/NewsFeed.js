@@ -11,7 +11,11 @@ export default MyPortfolio = () => {
       </View>
       <View style={styles.contentContainer}>
         <View style={styles.photoContainer}>
-          <Avatar size="large" rounded source={require("../../avatar2.png")} />
+          <Avatar
+            size="large"
+            rounded
+            source={require("../../assets/avatar2.png")}
+          />
           <Image style={styles.badge} source={require("../../linkedin.jpg")} />
           {/* <Image
             style={styles.badge}
